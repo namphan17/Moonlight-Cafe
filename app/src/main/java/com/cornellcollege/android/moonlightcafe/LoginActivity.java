@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
-        new GcmRegistrationAsyncTask(this).execute();
 
         userEmail = (EditText) findViewById(R.id.login_id);
         userPassword = (EditText) findViewById(R.id.login_password);
