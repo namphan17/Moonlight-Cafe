@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 //import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.TextView;
  * Created by akashsurti on 9/19/15.
  */
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 
     private Button login;
     private EditText userEmail;
@@ -26,7 +27,9 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
+        new GcmRegistrationAsyncTask(this).execute();
 
         userEmail = (EditText) findViewById(R.id.login_id);
         userPassword = (EditText) findViewById(R.id.login_password);
@@ -52,6 +55,7 @@ public class LoginActivity extends Activity {
             }
         });
     }
+
 
     public void login(View view) {
 
