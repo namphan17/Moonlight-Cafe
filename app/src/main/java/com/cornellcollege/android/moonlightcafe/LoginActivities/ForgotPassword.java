@@ -1,4 +1,4 @@
-package com.cornellcollege.android.moonlightcafe;
+package com.cornellcollege.android.moonlightcafe.LoginActivities;
 
 import android.app.Activity;
 

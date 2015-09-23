@@ -1,4 +1,4 @@
-package com.cornellcollege.android.moonlightcafe;
+package com.cornellcollege.android.moonlightcafe.LoginActivities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.cornellcollege.android.moonlightcafe.R;
 
 /**
  * Created by akashsurti on 9/21/15.

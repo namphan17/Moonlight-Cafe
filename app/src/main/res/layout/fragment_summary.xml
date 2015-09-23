@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/moon1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@id/item_name"
+            android:src="@drawable/moon"
+            />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Order Summary"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:textStyle="italic"
+            />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/item_name"
+            android:src="@drawable/moon"
+            />
+
+
+        <TextView
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moon1"
+            android:text="YOUR ORDER "
+            android:gravity="center"
+            android:margin="25dp"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order"
+            android:text="Food :"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity :"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@id/food"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:id="@+id/with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="with "
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/quantity"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <Button
+            android:id="@+id/summary_order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="Proceed Order"/>
+
+        <TextView
+            android:id="@+id/summary_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order"
+            android:layout_toRightOf="@id/food"
+            android:gravity="center"
+            android:text="Food"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+
+
+        <TextView
+            android:id="@+id/summary_quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/quantity"
+            android:padding="5dp"
+            android:layout_below="@+id/food" />
+
+        <TextView
+            android:id="@+id/option1_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/with"
+            android:layout_below="@id/quantity"
+            android:textSize="20sp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/option2_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/option1_text_view"
+            android:layout_below="@id/quantity"
+            android:textSize="20sp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/option3_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/option2_text_view"
+            android:layout_below="@id/quantity"/>
+        <TextView
+            android:id="@+id/option4_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/with"
+            android:layout_below="@id/with"/>
+
+        <TextView
+            android:id="@+id/option5_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_below="@+id/with"
+            android:layout_toRightOf="@+id/option4_text_view"
+            android:layout_toEndOf="@+id/with" />
+        <TextView
+            android:id="@+id/option6_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_below="@id/with"
+            android:layout_toRightOf="@+id/option5_text_view" />
+        <TextView
+            android:id="@+id/option7_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_below="@+id/option4_text_view"
+            android:layout_toRightOf="@+id/with"/>
+        <TextView
+            android:id="@+id/option8_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_below="@+id/option4_text_view"
+            android:layout_toRightOf="@id/option7_text_view" />
+        <TextView
+            android:id="@+id/option9_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_below="@id/option4_text_view"
+            android:layout_toRightOf="@+id/option8_text_view"/>
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To "
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_below="@id/option7_text_view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/summary_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="address"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/to"
+            android:layout_below="@id/option7_text_view"/>
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOTAL PRICE  : "
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@id/summary_order_button"/>
+        <TextView
+            android:id="@+id/summary_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ price"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:layout_above="@id/summary_order_button"
+            android:layout_alignLeft="@+id/summary_order_button" />
+
+    </RelativeLayout>
+
+</LinearLayout>
