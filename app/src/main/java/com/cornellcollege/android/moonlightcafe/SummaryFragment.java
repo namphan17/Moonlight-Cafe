@@ -1,5 +1,7 @@
 package com.cornellcollege.android.moonlightcafe;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Layout;
@@ -12,7 +14,9 @@ import android.widget.TextView;
 import java.util.UUID;
 
 /**
- * Fragment displaying a summary of the order and option to finalize order
+ *This fragment is for creating the UI for the order summary
+ * @author Akash Surti, Hwi Ram Jeong, Nam Phan, Dawit Tsigie
+ * @version 9/22/2015
  */
 public class SummaryFragment extends Fragment {
 
@@ -20,7 +24,6 @@ public class SummaryFragment extends Fragment {
     private int mQuantity;
     private int mSupplements = 0;
     private double mTotalPrice;
-    private Button orderButto;
 
     private TextView mItemNameTextView;
     private TextView mQuantityTextView;
@@ -35,9 +38,27 @@ public class SummaryFragment extends Fragment {
     private TextView mOption8TextView;
     private TextView mOption9TextView;
 
-    private TextView mOptionTextView;
+    private Button mPlaceOderButtonView;
 
     private TextView mPriceTextView;
+
+    private Callbacks mCallbacks;
+
+    public interface Callbacks {
+        void order(Context context);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mCallbacks = (Callbacks) activity;
+    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mCallbacks = null;
+    }
+
 
     public static final String ARG_ITEM_SUM_ID =
             "Summary_For_Item";
@@ -70,10 +91,18 @@ public class SummaryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_summary, container, false);
 
         mItemNameTextView = (TextView) view.findViewById(R.id.summary_name_text_view);
-        mItemNameTextView.setText(mItem.getName());
 
         mQuantityTextView = (TextView) view.findViewById(R.id.summary_quantity_text_view);
         mQuantityTextView.setText(mQuantity + "");
+
+        mPlaceOderButtonView = (Button) view.findViewById(R.id.summary_order_button);
+
+        mPlaceOderButtonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallbacks.order(getActivity());
+            }
+        });
 
         mOption1TextView = (TextView) view.findViewById(R.id.option1_text_view);
         mOption2TextView = (TextView) view.findViewById(R.id.option2_text_view);
@@ -249,6 +278,5 @@ public class SummaryFragment extends Fragment {
 
         return view;
     }
-
 
 }
