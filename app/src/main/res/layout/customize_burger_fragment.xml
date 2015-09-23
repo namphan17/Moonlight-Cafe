@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/moon"
+        android:layout_marginLeft="50dp"
+       />
+
+    <TextView
+        android:id="@+id/burger_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+               android:gravity="center"
+        android:padding="10dp"
+        android:text="Burger"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        />
+</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+              android:text="Quantity"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp">
+
+        <Button
+            android:id="@+id/burger_subtract_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/burger_quantity_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="20"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/burger_add_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Options"
+        android:textSize="25dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout">
+
+        <CheckBox
+            android:id="@+id/burger_lettuce"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Lettuce"/>
+
+        <CheckBox
+            android:id="@+id/burger_tomatoes"
+
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/burger_lettuce"
+            android:text="Tomatoes"
+            />
+
+        <CheckBox
+            android:id="@+id/burger_pickles"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/burger_lettuce"
+            android:layout_margin="10dp"
+            android:text="Pickles"/>
+
+        <CheckBox
+            android:id="@+id/burger_onion"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/burger_pickles"
+            android:layout_margin="10dp"
+            android:text="Onion"/>
+
+        <CheckBox
+
+            android:id="@+id/burger_bacon"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/burger_tomatoes"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/burger_pickles"
+            android:text="Bacon"/>
+
+        <CheckBox
+
+            android:id="@+id/burger_cucumber"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/burger_tomatoes"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/burger_bacon"
+            android:text="Cucumber"/>
+
+
+
+        <CheckBox
+            android:id="@+id/burger_cheese"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/burger_tomatoes"
+            android:text="Cheese"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/burger"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="127dp"
+            android:layout_marginEnd="127dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:id="@+id/burger_order_button"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

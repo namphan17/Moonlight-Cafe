@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/moon"
+        android:layout_marginLeft="50dp"
+       />
+
+    <TextView
+        android:id="@+id/eggroll_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+               android:gravity="center"
+        android:padding="10dp"
+        android:text="  Eggroll \n (Pork)"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        />
+</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+              android:text="Quantity"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp">
+
+        <Button
+            android:id="@+id/eggroll_subtract_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/eggroll_quantity_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="20"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/eggroll_add_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Options(sauce)"
+        android:textSize="25dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout">
+
+        <CheckBox
+            android:id="@+id/eggroll_barbeque"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Barbeque"/>
+
+        <CheckBox
+            android:id="@+id/eggroll_ketchup"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eggroll_barbeque"
+            android:layout_margin="10dp"
+            android:text="Ketchup"/>
+
+
+        <CheckBox
+            android:id="@+id/eggroll_hot"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/eggroll_barbeque"
+            android:text="Hot"
+            />
+
+        <CheckBox
+            android:id="@+id/eggroll_ranch"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/eggroll_hot"
+            android:text="Ranch"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/porkeggroll"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="127dp"
+            android:layout_marginEnd="127dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:id="@+id/eggroll_order_button"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
