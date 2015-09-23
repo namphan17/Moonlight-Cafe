@@ -74,7 +74,7 @@ public class MenuGenerator {
         sauceOptionsEggroll.put("ketchup", false);
         eggroll.setOptions(sauceOptionsEggroll);
 
-        Item eggrollVegie = new Item("Eggroll(Vegie");
+        Item eggrollVegie = new Item("Eggroll(Vegie)");
         eggrollVegie.setPrice(3);
         eggrollVegie.setLayoutResId(R.layout.customize_vegie_eggroll_fragment);
         Hashtable<String, Boolean> sauceOptionsVegieEggroll = new Hashtable<>();

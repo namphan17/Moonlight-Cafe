@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.tibuchuba.android.moonlightcafe.database.ItemBaseHelper;
-import com.tibuchuba.android.moonlightcafe.database.ItemCursorWrapper;
-import com.tibuchuba.android.moonlightcafe.database.ItemDbSchema.ItemTable;
+import com.cornellcollege.android.moonlightcafe.database.ItemBaseHelper;
+import com.cornellcollege.android.moonlightcafe.database.ItemCursorWrapper;
+import com.cornellcollege.android.moonlightcafe.database.ItemDbSchema.ItemTable;
 
 import java.util.ArrayList;
 import java.util.List;

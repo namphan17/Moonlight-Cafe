@@ -7,7 +7,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.tibuchuba.android.moonlightcafe.database.ItemDbSchema.ItemTable;
+
 
 /**
  * Created by Tibuchuba on 9/9/2015.
@@ -23,12 +23,12 @@ public class ItemBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("create table " + ItemTable.NAME + "(" +
+        db.execSQL("create table " + ItemDbSchema.ItemTable.NAME + "(" +
                         " _id integer primary key autoincrement, " +
-                        ItemTable.Cols.UUID + ", " +
-                        ItemTable.Cols.NAME + ", " +
-                        ItemTable.Cols.PRICE + ", " +
-                        ItemTable.Cols.RESID +
+                        ItemDbSchema.ItemTable.Cols.UUID + ", " +
+                        ItemDbSchema.ItemTable.Cols.NAME + ", " +
+                        ItemDbSchema.ItemTable.Cols.PRICE + ", " +
+                        ItemDbSchema.ItemTable.Cols.RESID +
                         ")"
         );
     }

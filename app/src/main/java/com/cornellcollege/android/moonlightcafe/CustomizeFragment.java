@@ -12,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
+import java.util.Hashtable;
 import java.util.UUID;
 
 /**
@@ -77,6 +78,16 @@ public class CustomizeFragment extends Fragment{
         View view = inflater.inflate(mLayoutResId, container, false);
         // Pizza layout
         if (mLayoutResId == R.layout.customize_pizza_fragment) {
+            Hashtable pizzaOptions = mItem.getOptions();
+            pizzaOptions.put("pepperoni", false);
+            pizzaOptions.put("bacon", false);
+            pizzaOptions.put("onion", false);
+            pizzaOptions.put("black_olives", false);
+            pizzaOptions.put("sausage", false);
+            pizzaOptions.put("mushroom", false);
+            pizzaOptions.put("extra_cheese", false);
+            pizzaOptions.put("chicken", false);
+            pizzaOptions.put("pineapple", false);
 //            mQuantity = 0;
             mNameTextView = (TextView) view.findViewById(R.id.pizza_item_name_text_view);
             mAddButtonView = (Button) view.findViewById(R.id.pizza_add_button_view);
@@ -92,7 +103,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("pepperoni", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("pepperoni");
+                    mItem.getOptions().put("pepperoni", !checked);
                 }
             });
 
@@ -101,7 +113,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("bacon", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("bacon");
+                    mItem.getOptions().put("bacon", !checked);
                 }
             });
 
@@ -110,7 +123,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("onion", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("onion");
+                    mItem.getOptions().put("onion", !checked);
                 }
             });
 
@@ -119,7 +133,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("black_olives", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("black_olives");
+                    mItem.getOptions().put("black_olives", !checked);
                 }
             });
 
@@ -128,7 +143,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("sausage", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("sausage");
+                    mItem.getOptions().put("sausage", !checked);
                 }
             });
 
@@ -137,7 +153,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("mushroom", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("mushroom");
+                    mItem.getOptions().put("mushroom", !checked);
                 }
             });
 
@@ -146,7 +163,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("extra_cheese", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("extra_cheese");
+                    mItem.getOptions().put("extra_cheese", !checked);
                 }
             });
 
@@ -155,7 +173,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("chicken", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("chicken");
+                    mItem.getOptions().put("chicken", !checked);
                 }
             });
 
@@ -164,7 +183,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("pineapple", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("pineapple");
+                    mItem.getOptions().put("pineapple", checked);
                 }
             });
         }
@@ -172,19 +192,27 @@ public class CustomizeFragment extends Fragment{
         // Burger layout
         if (mLayoutResId == R.layout.customize_burger_fragment) {
 //            mQuantity = 0;
+            Hashtable burgerOptions = mItem.getOptions();
+            burgerOptions.put("lettuce", false);
+            burgerOptions.put("pickles", false);
+            burgerOptions.put("onion", false);
+            burgerOptions.put("tomatoes", false);
+            burgerOptions.put("cucumber", false);
+            burgerOptions.put("cheese", false);
+            burgerOptions.put("bacon", false);
             mNameTextView = (TextView) view.findViewById(R.id.burger_item_name);
             mAddButtonView = (Button) view.findViewById(R.id.burger_add_button_view);
             mQuantityTextView = (TextView) view.findViewById(R.id.burger_quantity_text_view);
             mSubtractButtonView = (Button) view.findViewById(R.id.burger_subtract_button_view);
             mOrderButtonView = (Button) view.findViewById(R.id.burger_order_button);
-            mOption1 = (CheckBox) view.findViewById(R.id.pizza_pepperoni);
 
             mOption1 = (CheckBox) view.findViewById(R.id.burger_lettuce);
             mOption1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("lettuce", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("lettuce");
+                    mItem.getOptions().put("lettuce", !checked);
                 }
             });
 
@@ -193,7 +221,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("pickles", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("pickles");
+                    mItem.getOptions().put("pickles", !checked);
                 }
             });
 
@@ -202,7 +231,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("onion", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("onion");
+                    mItem.getOptions().put("onion", !checked);
                 }
             });
 
@@ -211,7 +241,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("tomatoes", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("tomatoes");
+                    mItem.getOptions().put("tomatoes", !checked);
                 }
             });
 
@@ -220,7 +251,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("cucumber", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("cucumber");
+                    mItem.getOptions().put("cucumber", !checked);
                 }
             });
 
@@ -229,7 +261,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("cheese", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("cheese");
+                    mItem.getOptions().put("cheese", !checked);
                 }
             });
 
@@ -238,7 +271,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("bacon", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("bacon");
+                    mItem.getOptions().put("bacon", !checked);
                 }
             });
         }
@@ -246,19 +280,24 @@ public class CustomizeFragment extends Fragment{
         // Chicken tender layout
         if (mLayoutResId == R.layout.customize_chicken_fragment) {
 //            mQuantity = 0;
+            Hashtable sauceOptions = mItem.getOptions();
+            sauceOptions.put("barbeque", false);
+            sauceOptions.put("hot", false);
+            sauceOptions.put("ranch", false);
+            sauceOptions.put("ketchup", false);
             mNameTextView = (TextView) view.findViewById(R.id.chicken_item_name);
             mAddButtonView = (Button) view.findViewById(R.id.chicken_add_button_view);
             mQuantityTextView = (TextView) view.findViewById(R.id.chicken_quantity_text_view);
             mSubtractButtonView = (Button) view.findViewById(R.id.chicken_subtract_button_view);
             mOrderButtonView = (Button) view.findViewById(R.id.chicken_order_button);
-            mOption1 = (CheckBox) view.findViewById(R.id.pizza_pepperoni);
 
             mOption1 = (CheckBox) view.findViewById(R.id.chicken_barbeque);
             mOption1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("barbeque", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("barbeque");
+                    mItem.getOptions().put("barbeque", !checked);
                 }
             });
 
@@ -267,7 +306,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("hot", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("hot");
+                    mItem.getOptions().put("hot", !checked);
                 }
             });
 
@@ -276,7 +316,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ranch", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ranch");
+                    mItem.getOptions().put("ranch", !checked);
                 }
             });
 
@@ -285,7 +326,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ketchup", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ketchup");
+                    mItem.getOptions().put("ketchup", !checked);
                 }
             });
         }
@@ -293,6 +335,11 @@ public class CustomizeFragment extends Fragment{
         // Fries layout
         if (mLayoutResId == R.layout.customize_fries_fragment) {
 //            mQuantity = 0;
+            Hashtable sauceOptions = mItem.getOptions();
+            sauceOptions.put("barbeque", false);
+            sauceOptions.put("hot", false);
+            sauceOptions.put("ranch", false);
+            sauceOptions.put("ketchup", false);
             mNameTextView = (TextView) view.findViewById(R.id.fries_item_name);
             mAddButtonView = (Button) view.findViewById(R.id.fries_add_button_view);
             mQuantityTextView = (TextView) view.findViewById(R.id.fries_quantity_text_view);
@@ -304,7 +351,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("barbeque", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("barbeque");
+                    mItem.getOptions().put("barbeque", !checked);
                 }
             });
 
@@ -313,7 +361,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("hot", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("hot");
+                    mItem.getOptions().put("hot", !checked);
                 }
             });
 
@@ -322,7 +371,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ranch", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ranch");
+                    mItem.getOptions().put("ranch", !checked);
                 }
             });
 
@@ -331,7 +381,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ketchup", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ketchup");
+                    mItem.getOptions().put("ketchup", !checked);
                 }
             });
         }
@@ -339,6 +390,11 @@ public class CustomizeFragment extends Fragment{
         // Eggroll layout
         if (mLayoutResId == R.layout.customize_porkeggroll_fragment) {
 //            mQuantity = 0;
+            Hashtable sauceOptions = mItem.getOptions();
+            sauceOptions.put("barbeque", false);
+            sauceOptions.put("hot", false);
+            sauceOptions.put("ranch", false);
+            sauceOptions.put("ketchup", false);
             mNameTextView = (TextView) view.findViewById(R.id.eggroll_item_name);
             mAddButtonView = (Button) view.findViewById(R.id.eggroll_add_button_view);
             mQuantityTextView = (TextView) view.findViewById(R.id.eggroll_quantity_text_view);
@@ -350,7 +406,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("barbeque", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("barbeque");
+                    mItem.getOptions().put("barbeque", !checked);
                 }
             });
 
@@ -359,7 +416,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("hot", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("hot");
+                    mItem.getOptions().put("hot", !checked);
                 }
             });
 
@@ -368,7 +426,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ranch", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ranch");
+                    mItem.getOptions().put("ranch", !checked);
                 }
             });
 
@@ -377,7 +436,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ketchup", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ketchup");
+                    mItem.getOptions().put("ketchup", !checked);
                 }
             });
         }
@@ -385,6 +445,11 @@ public class CustomizeFragment extends Fragment{
         // Vegie eggroll layout
         if (mLayoutResId == R.layout.customize_vegie_eggroll_fragment) {
 //            mQuantity = 0;
+            Hashtable sauceOptions = mItem.getOptions();
+            sauceOptions.put("barbeque", false);
+            sauceOptions.put("hot", false);
+            sauceOptions.put("ranch", false);
+            sauceOptions.put("ketchup", false);
             mNameTextView = (TextView) view.findViewById(R.id.eggroll_vegie_item_name);
             mAddButtonView = (Button) view.findViewById(R.id.eggroll_vegie_add_button_view);
             mQuantityTextView = (TextView) view.findViewById(R.id.eggroll_vegie_quantity_text_view);
@@ -396,7 +461,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("barbeque", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("barbeque");
+                    mItem.getOptions().put("barbeque", !checked);
                 }
             });
 
@@ -405,7 +471,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("hot", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("hot");
+                    mItem.getOptions().put("hot", !checked);
                 }
             });
 
@@ -414,7 +481,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ranch", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ranch");
+                    mItem.getOptions().put("ranch", !checked);
                 }
             });
 
@@ -423,7 +491,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("ketchup", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("ketchup");
+                    mItem.getOptions().put("ketchup", !checked);
                 }
             });
         }
@@ -441,10 +510,17 @@ public class CustomizeFragment extends Fragment{
         // Smoothie
         if (mLayoutResId == R.layout.customize_smoothie_fragment) {
 //            mQuantity = 0;
-            mNameTextView = (TextView) view.findViewById(R.id.pizza_item_name_text_view);
-            mAddButtonView = (Button) view.findViewById(R.id.pizza_add_button_view);
-            mQuantityTextView = (TextView) view.findViewById(R.id.pizza_quantity_text_view);
-            mSubtractButtonView = (Button) view.findViewById(R.id.pizza_subtract_button_view);
+            Hashtable<String, Boolean> smoothieOptions = mItem.getOptions();
+            smoothieOptions.put("strawberry", false);
+            smoothieOptions.put("pineapple", false);
+            smoothieOptions.put("banana", false);
+            smoothieOptions.put("forbidden_fruit", false);
+            smoothieOptions.put("mango", false);
+            smoothieOptions.put("lemonade", false);
+            mNameTextView = (TextView) view.findViewById(R.id.smoothie_item_name);
+            mAddButtonView = (Button) view.findViewById(R.id.smoothie_add_button_view);
+            mQuantityTextView = (TextView) view.findViewById(R.id.smoothie_quantity_text_view);
+            mSubtractButtonView = (Button) view.findViewById(R.id.smoothie_subtract_button_view);
             mOrderButtonView = (Button) view.findViewById(R.id.smoothie_order_button);
 
             mOption1 = (CheckBox) view.findViewById(R.id.smoothie_strawberry);
@@ -452,7 +528,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("strawberry", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("strawberry");
+                    mItem.getOptions().put("strawberry", !checked);
                 }
             });
 
@@ -461,7 +538,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("pineapple", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("pineapple");
+                    mItem.getOptions().put("pineapple", !checked);
                 }
             });
 
@@ -470,7 +548,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("banana", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("banana");
+                    mItem.getOptions().put("banana", !checked);
                 }
             });
 
@@ -479,7 +558,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("forbidden_fruit", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("forbidden_fruit");
+                    mItem.getOptions().put("forbidden_fruit", !checked);
                 }
             });
 
@@ -488,7 +568,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("mango", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("mango");
+                    mItem.getOptions().put("mango", !checked);
                 }
             });
 
@@ -497,7 +578,8 @@ public class CustomizeFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    mItem.getOptions().put("lemonade", true);
+                    boolean checked = (Boolean) mItem.getOptions().get("lemonade");
+                    mItem.getOptions().put("lemonade", !checked);
                 }
             });
 
@@ -511,6 +593,11 @@ public class CustomizeFragment extends Fragment{
             public void onClick(View v) {
                 mQuantity++;
                 mQuantityTextView.setText("" + mQuantity);
+                if (mQuantity != 0) {
+                    mOrderButtonView.setEnabled(true);
+                } else {
+                    mOrderButtonView.setEnabled(false);
+                }
             }
         });
 
@@ -520,9 +607,15 @@ public class CustomizeFragment extends Fragment{
                 if (mQuantity > 0) {
                     mQuantity--;
                     mQuantityTextView.setText("" + mQuantity);
+                    if (mQuantity != 0) {
+                        mOrderButtonView.setEnabled(true);
+                    } else {
+                        mOrderButtonView.setEnabled(false);
+                    }
                 }
             }
         });
+
 
         mOrderButtonView.setOnClickListener(new View.OnClickListener() {
 

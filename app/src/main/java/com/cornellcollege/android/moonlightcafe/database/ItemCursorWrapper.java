@@ -3,7 +3,8 @@ package com.cornellcollege.android.moonlightcafe.database;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
-import com.tibuchuba.android.moonlightcafe.Item;
+
+import com.cornellcollege.android.moonlightcafe.Item;
 
 import java.util.UUID;
 

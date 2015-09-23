@@ -9,13 +9,7 @@
         android:layout_height="match_parent"
         >
 
-        <ImageView
-            android:id="@+id/moon1"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_toLeftOf="@id/item_name"
-            android:src="@drawable/moon"
-            />
+
 
         <TextView
             android:id="@+id/item_name"
@@ -28,6 +22,13 @@
             android:textAllCaps="true"
             android:textSize="30sp"
             android:textStyle="italic"
+            />
+        <ImageView
+            android:id="@+id/moon1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@id/item_name"
+            android:src="@drawable/moon"
             />
 
         <ImageView
@@ -42,10 +43,10 @@
             android:id="@+id/order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/moon1"
+            android:layout_below="@id/item_name"
             android:text="YOUR ORDER "
             android:gravity="center"
-            android:margin="25dp"
+            android:layout_margin="25dp"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -75,7 +76,7 @@
             android:id="@+id/with"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="with "
+            android:text="with:"
             android:textSize="25dp"
             android:textStyle="bold"
             android:layout_below="@+id/quantity"
@@ -115,7 +116,7 @@
             android:textSize="20sp"
             android:layout_toRightOf="@id/quantity"
             android:padding="5dp"
-            android:layout_below="@+id/food" />
+            android:layout_below="@id/food" />
 
         <TextView
             android:id="@+id/option1_text_view"
@@ -159,8 +160,8 @@
             android:textSize="20sp"
             android:padding="5dp"
             android:layout_below="@+id/with"
-            android:layout_toRightOf="@+id/option4_text_view"
-            android:layout_toEndOf="@+id/with" />
+            android:layout_toRightOf="@id/option4_text_view"
+            android:layout_toEndOf="@id/with" />
         <TextView
             android:id="@+id/option6_text_view"
             android:layout_width="wrap_content"
@@ -168,15 +169,15 @@
             android:textSize="20sp"
             android:padding="5dp"
             android:layout_below="@id/with"
-            android:layout_toRightOf="@+id/option5_text_view" />
+            android:layout_toRightOf="@id/option5_text_view" />
         <TextView
             android:id="@+id/option7_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:padding="5dp"
-            android:layout_below="@+id/option4_text_view"
-            android:layout_toRightOf="@+id/with"/>
+            android:layout_below="@id/option4_text_view"
+            android:layout_toRightOf="@id/with"/>
         <TextView
             android:id="@+id/option8_text_view"
             android:layout_width="wrap_content"
@@ -192,7 +193,7 @@
             android:textSize="20sp"
             android:padding="5dp"
             android:layout_below="@id/option4_text_view"
-            android:layout_toRightOf="@+id/option8_text_view"/>
+            android:layout_toRightOf="@id/option8_text_view"/>
 
         <TextView
             android:id="@+id/to"
@@ -227,10 +228,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$ price"
-            android:textSize="20sp"
+            android:textSize="25sp"
+            android:textStyle="bold"
             android:padding="5dp"
             android:layout_above="@id/summary_order_button"
-            android:layout_alignLeft="@+id/summary_order_button" />
+            android:layout_alignLeft="@+id/summary_order_button"
+            android:onClick="order"/>
 
     </RelativeLayout>
 
