@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cornellcollege.android.moonlightcafe.R;
 
@@ -31,6 +32,14 @@ public class Register extends Activity{
     private Spinner securityQuestion;
     private TextView userId;
 
+    private TextView firstNameError;
+    private TextView lastNameError;
+    private TextView emailEmptyError;
+    private TextView emailInvalidError;
+    private TextView emailAlreadyUsedError;
+    private TextView differentPasswordError;
+    private TextView securityAnswerError;
+
     private String username;
     private String fname;
     private String lname;
@@ -39,10 +48,32 @@ public class Register extends Activity{
     private String secureQuestion;
     private String finalpassword;
 
+    private boolean registerComplete = false;
+
+    private boolean firstError = false;
+    private boolean lastError = false;
+    private boolean emptyError = false;
+    private boolean invalidError = false;
+    private boolean alreadyError = false;
+    private boolean differentError = false;
+    private boolean securityError = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        firstNameError = (TextView) findViewById(R.id.firstname_error);
+        lastNameError = (TextView) findViewById(R.id.lastname_error);
+        emailEmptyError = (TextView) findViewById(R.id.email_empty_error);
+        emailInvalidError = (TextView) findViewById(R.id.email_incorrect_error);
+        emailAlreadyUsedError = (TextView) findViewById(R.id.already_exists_error);
+        differentPasswordError = (TextView) findViewById(R.id.password_doesnt_match);
+        securityAnswerError = (TextView) findViewById(R.id.security_error);
+
+        if(firstError && lastError && emptyError && invalidError && alreadyError && differentError && securityError){
+            registerComplete = true;
+        }
 
         cancel = (Button) findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +88,12 @@ public class Register extends Activity{
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Register.this, Login.class);
-                startActivity(i);
+                if(registerComplete){
+                    Intent i = new Intent(Register.this, Login.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(this, R.string.toast_incomplete_signup, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -66,17 +101,31 @@ public class Register extends Activity{
         firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                if(firstName.getText().equals(null)){
+                    firstNameError.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                if(firstName.getText().equals(null)){
+                    firstNameError.setVisibility(View.VISIBLE);
+                } else {
+                    firstNameError.setVisibility(View.GONE);
+                    firstError = true;
+                    fname = firstName.getText().toString();
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                if(firstName.getText().equals(null)){
+                    firstNameError.setVisibility(View.VISIBLE);
+                } else {
+                    firstNameError.setVisibility(View.GONE);
+                    firstError = true;
+                    fname = firstName.getText().toString();
+                }
             }
         });
 
@@ -117,7 +166,7 @@ public class Register extends Activity{
         });
 
         userId = (TextView) findViewById(R.id.username);
-        userId.setText(username);
+        userId.setText(fname);
 
         password = (EditText) findViewById(R.id.password1);
         password.addTextChangedListener(new TextWatcher() {
