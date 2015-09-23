@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="AppTheme" parent="@style/_AppTheme"/>
+
+  <style name="_AppTheme" parent="Theme.AppCompat.Light">
+
+    <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+
+    <item name="android:spinnerStyle">@style/SpinnerAppTheme</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemAppTheme</item>
+
+  </style>
+
+
+
+  <color name="red">#F44336</color>
+  <color name="black">#000</color>
+  <color name="dark_blue">#005A8A</color>
+  <color name="yellow">#ffff00</color>
+
+</resources>
