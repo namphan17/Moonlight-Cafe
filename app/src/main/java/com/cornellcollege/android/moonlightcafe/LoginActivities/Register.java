@@ -19,6 +19,8 @@ import android.widget.Toast;
  */
 
 import com.cornellcollege.android.moonlightcafe.R;
+import com.cornellcollege.android.moonlightcafe.logindata.LoginData;
+import com.cornellcollege.android.moonlightcafe.logindata.LoginUser;
 
 public class Register extends Activity{
 
@@ -96,6 +98,16 @@ public class Register extends Activity{
 
                 if (registerComplete) {
                     Intent i = new Intent(Register.this, Login.class);
+                    LoginData log = LoginData.get(Register.this);
+                    LoginUser loginUser = new LoginUser();
+                    loginUser.setUsername(username);
+                    loginUser.setEmail(email);
+                    loginUser.setLname(lname);
+                    loginUser.setFname(fname);
+                    loginUser.setSecureAnswer(secureAnswer);
+                    loginUser.setSecureQuestion(secureQuestion);
+                    loginUser.setPassword(finalpassword);
+                    log.addLogin(loginUser);
                     startActivity(i);
                 } else {
                     Toast.makeText(Register.this, "Registration is Incomplete!", Toast.LENGTH_SHORT).show();

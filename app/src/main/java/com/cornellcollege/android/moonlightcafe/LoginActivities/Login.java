@@ -51,38 +51,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        userEmail = (EditText) findViewById(R.id.first_name);
-        userEmail.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                username = userEmail.getText().toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
-
-        userPassword = (EditText) findViewById(R.id.first_name);
-        userPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                password = userPassword.getText().toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
