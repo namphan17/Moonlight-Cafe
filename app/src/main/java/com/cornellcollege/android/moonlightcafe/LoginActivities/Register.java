@@ -24,6 +24,8 @@ import com.cornellcollege.android.moonlightcafe.logindata.LoginUser;
 
 public class Register extends Activity{
 
+    private LoginData log;
+
     private Button cancel;
     private Button signup;
     private EditText firstName;
@@ -98,7 +100,7 @@ public class Register extends Activity{
 
                 if (registerComplete) {
                     Intent i = new Intent(Register.this, Login.class);
-                    LoginData log = LoginData.get(Register.this);
+                    log = LoginData.get(Register.this);
                     LoginUser loginUser = new LoginUser();
                     loginUser.setUsername(username);
                     loginUser.setEmail(email);
@@ -108,6 +110,7 @@ public class Register extends Activity{
                     loginUser.setSecureQuestion(secureQuestion);
                     loginUser.setPassword(finalpassword);
                     log.addLogin(loginUser);
+                    Toast.makeText(Register.this, "Registered!", Toast.LENGTH_SHORT).show();
                     startActivity(i);
                 } else {
                     Toast.makeText(Register.this, "Registration is Incomplete!", Toast.LENGTH_SHORT).show();
