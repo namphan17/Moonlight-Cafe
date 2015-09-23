@@ -159,9 +159,18 @@
                 android:password="true"
                 />
 
+            <TextView
+                android:id="@+id/password_doesnt_match"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/incorrect_pass"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_below="@id/password1"/>
+
             <EditText
                 android:id="@+id/password2"
-                android:layout_below="@id/password1"
+                android:layout_below="@id/password_doesnt_match"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/confirm_password"
@@ -188,6 +197,7 @@
                 android:layout_below="@id/security"/>
 
             <EditText
+                android:id="@+id/security_answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/security_question_answer"
@@ -195,6 +205,14 @@
                 android:gravity="center"
                 />
 
+            <TextView
+                android:id="@+id/security_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/incomplete_field"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_below="@id/security_answer"/>
 
         </LinearLayout>
     </ScrollView>
