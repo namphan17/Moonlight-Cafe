@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,12 +14,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cornellcollege.android.moonlightcafe.R;
-
-
 /**
  * Created by akashsurti on 9/21/15.
  */
+
+import com.cornellcollege.android.moonlightcafe.R;
+
 public class Register extends Activity{
 
     private Button cancel;
@@ -48,13 +49,16 @@ public class Register extends Activity{
     private String secureQuestion;
     private String finalpassword;
 
+    private String temp_pass = "random";
+    private String temp_pass2 = "random1";
+
     private boolean registerComplete = false;
 
     private boolean firstError = false;
     private boolean lastError = false;
     private boolean emptyError = false;
     private boolean invalidError = false;
-    private boolean alreadyError = false;
+    private boolean alreadyError = true;
     private boolean differentError = false;
     private boolean securityError = false;
 
@@ -71,9 +75,6 @@ public class Register extends Activity{
         differentPasswordError = (TextView) findViewById(R.id.password_doesnt_match);
         securityAnswerError = (TextView) findViewById(R.id.security_error);
 
-        if(firstError && lastError && emptyError && invalidError && alreadyError && differentError && securityError){
-            registerComplete = true;
-        }
 
         cancel = (Button) findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -88,11 +89,16 @@ public class Register extends Activity{
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(registerComplete){
+
+                if(firstError && lastError && emptyError && invalidError && alreadyError && differentError && securityError){
+                    registerComplete = true;
+                }
+
+                if (registerComplete) {
                     Intent i = new Intent(Register.this, Login.class);
                     startActivity(i);
                 } else {
-                    Toast.makeText(this, R.string.toast_incomplete_signup, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Registration is Incomplete!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -101,15 +107,13 @@ public class Register extends Activity{
         firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(firstName.getText().equals(null)){
-                    firstNameError.setVisibility(View.VISIBLE);
-                }
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(firstName.getText().equals(null)){
+                if (firstName.getText().length() == 0) {
                     firstNameError.setVisibility(View.VISIBLE);
+                    firstError = false;
                 } else {
                     firstNameError.setVisibility(View.GONE);
                     firstError = true;
@@ -119,13 +123,6 @@ public class Register extends Activity{
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(firstName.getText().equals(null)){
-                    firstNameError.setVisibility(View.VISIBLE);
-                } else {
-                    firstNameError.setVisibility(View.GONE);
-                    firstError = true;
-                    fname = firstName.getText().toString();
-                }
             }
         });
 
@@ -138,7 +135,14 @@ public class Register extends Activity{
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                if(lastName.getText().length() == 0){
+                    lastNameError.setVisibility(View.VISIBLE);
+                    lastError = false;
+                } else {
+                    lastNameError.setVisibility(View.GONE);
+                    lastError = true;
+                    lname = lastName.getText().toString();
+                }
             }
 
             @Override
@@ -156,7 +160,34 @@ public class Register extends Activity{
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (cornellId.getText().length() == 0) {
+                    emailEmptyError.setVisibility(View.VISIBLE);
+                    emailInvalidError.setVisibility(View.GONE);
+                    emptyError = false;
+                    return;
+                } else {
+                    emailEmptyError.setVisibility(View.GONE);
+                    emptyError = true;
+                    email = cornellId.getText().toString();
 
+                    String validemail = "cornellcollege.edu";
+
+                    if (email.contains(validemail)) {
+                        invalidError = true;
+                        emailInvalidError.setVisibility(View.GONE);
+
+                        String extra = email;
+                        String another = extra.replace("@cornellcollege.edu", "");
+                        username = another;
+                        userId = (TextView) findViewById(R.id.username);
+                        userId.setText(username);
+
+                    } else {
+                        invalidError = false;
+                        emailInvalidError.setVisibility(View.VISIBLE);
+                        return;
+                    }
+                }
             }
 
             @Override
@@ -164,9 +195,6 @@ public class Register extends Activity{
 
             }
         });
-
-        userId = (TextView) findViewById(R.id.username);
-        userId.setText(fname);
 
         password = (EditText) findViewById(R.id.password1);
         password.addTextChangedListener(new TextWatcher() {
@@ -177,7 +205,7 @@ public class Register extends Activity{
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                temp_pass = password.getText().toString();
             }
 
             @Override
@@ -196,6 +224,16 @@ public class Register extends Activity{
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                temp_pass2 = repassword.getText().toString();
+
+                if (temp_pass.equals(temp_pass2)) {
+                    differentPasswordError.setVisibility(View.GONE);
+                    differentError = true;
+                    finalpassword = repassword.getText().toString();
+                } else {
+                    differentPasswordError.setVisibility(View.VISIBLE);
+                    differentError = false;
+                }
             }
 
             @Override
@@ -212,6 +250,20 @@ public class Register extends Activity{
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         securityQuestion.setAdapter(adapter);
 
+        securityQuestion.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        secureQuestion = securityQuestion.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        secureQuestion = securityQuestion.getSelectedItem().toString();
+                    }
+                }
+        );
+
         securityAnswer = (EditText) findViewById(R.id.security_answer);
         securityAnswer.addTextChangedListener(new TextWatcher() {
             @Override
@@ -221,7 +273,14 @@ public class Register extends Activity{
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                if (securityAnswer.getText().length() == 0) {
+                    securityAnswerError.setVisibility(View.VISIBLE);
+                    securityError = false;
+                } else {
+                    securityAnswerError.setVisibility(View.GONE);
+                    securityError = true;
+                    secureAnswer = securityAnswer.getText().toString();
+                }
             }
 
             @Override

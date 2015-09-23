@@ -201,7 +201,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/security_question_answer"
-                android:layout_below="@id/security_spinner"
                 android:gravity="center"
                 />
 
