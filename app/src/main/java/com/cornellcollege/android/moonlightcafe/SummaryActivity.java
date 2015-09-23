@@ -9,6 +9,7 @@ import java.util.UUID;
 /**
  * Created by Tibuchuba on 9/22/2015.
  */
+
 public class SummaryActivity extends FragmentActivity {
 
     public static final String SUMMARY_EXTRA_ITEM_ID =

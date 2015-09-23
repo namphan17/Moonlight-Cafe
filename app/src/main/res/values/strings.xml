@@ -23,6 +23,7 @@
     <string name="security_question">Please select one of the following questions: </string>
     <string name="incorrect_pass">The passwords do not match!</string>
     <string name="toast_incomplete_signup">All fields have not been completed yet!</string>
+    <string name="next">Next</string>
 
     <string name="action_settings">Settings</string>
 </resources>

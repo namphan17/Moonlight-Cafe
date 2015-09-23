@@ -71,7 +71,8 @@
                     android:text="@string/incomplete_field"
                     android:layout_weight="1"
                     android:visibility="gone"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    style="@style/text"/>
 
                 <TextView
                     android:id="@+id/lastname_error"
@@ -80,7 +81,8 @@
                     android:text="@string/incomplete_field"
                     android:layout_weight="1"
                     android:visibility="gone"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    style="@style/text"/>
             </LinearLayout>
 
             <EditText
@@ -98,7 +100,8 @@
                 android:text="@string/incomplete_field"
                 android:gravity="center"
                 android:visibility="gone"
-                android:layout_below="@id/cornell_email"/>
+                android:layout_below="@id/cornell_email"
+                style="@style/text"/>
 
             <TextView
                 android:id="@+id/email_incorrect_error"
@@ -107,7 +110,8 @@
                 android:text="@string/not_cornell_email"
                 android:gravity="center"
                 android:visibility="gone"
-                android:layout_below="@id/cornell_email"/>
+                android:layout_below="@id/cornell_email"
+                style="@style/text"/>
 
             <TextView
                 android:id="@+id/already_exists_error"
@@ -116,7 +120,8 @@
                 android:text="@string/already_exists"
                 android:gravity="center"
                 android:visibility="gone"
-                android:layout_below="@id/cornell_email"/>
+                android:layout_below="@id/cornell_email"
+                style="@style/text"/>
 
             <LinearLayout
                 android:id="@+id/username_layout"
@@ -166,7 +171,8 @@
                 android:text="@string/incorrect_pass"
                 android:gravity="center"
                 android:visibility="gone"
-                android:layout_below="@id/password1"/>
+                android:layout_below="@id/password1"
+                style="@style/text"/>
 
             <EditText
                 android:id="@+id/password2"
@@ -211,7 +217,8 @@
                 android:text="@string/incomplete_field"
                 android:gravity="center"
                 android:visibility="gone"
-                android:layout_below="@id/security_answer"/>
+                android:layout_below="@id/security_answer"
+                style="@style/text"/>
 
         </LinearLayout>
     </ScrollView>

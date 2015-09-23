@@ -1,0 +1,6 @@
+<resources>
+    <style name="text">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>
