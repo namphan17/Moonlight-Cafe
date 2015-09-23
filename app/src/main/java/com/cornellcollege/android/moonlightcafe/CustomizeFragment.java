@@ -16,7 +16,7 @@ import java.util.Hashtable;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/21/2015.
+ * Fragment used to layout and choose various optional add-ons for a food item
  */
 public class CustomizeFragment extends Fragment{
 

@@ -1,7 +1,7 @@
 package com.cornellcollege.android.moonlightcafe.logindata;
 
 /**
- * Created by Tibuchuba on 9/23/2015.
+ * Database schema for user profile
  */
 public class LoginDbSchema {
     public static final class LoginTable {

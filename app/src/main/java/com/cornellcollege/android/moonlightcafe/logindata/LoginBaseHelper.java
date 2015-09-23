@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Tibuchuba on 9/23/2015.
+ * Helper class used to create database for login information
  */
 public class LoginBaseHelper extends SQLiteOpenHelper {
 

@@ -1,7 +1,7 @@
 package com.cornellcollege.android.moonlightcafe.logindata;
 
 /**
- * Created by Tibuchuba on 9/23/2015.
+ * Models user login information
  */
 public class LoginUser {
     public String getUsername() {

@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.List;
 
 /**
- * Created by Tibuchuba on 9/22/2015.
+ * Class used to generate a list of menu items available for sale
  */
 public class MenuGenerator {
     public static List<Item> itemsForMenu() {

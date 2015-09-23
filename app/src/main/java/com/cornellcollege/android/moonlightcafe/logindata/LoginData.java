@@ -10,7 +10,7 @@ import com.cornellcollege.android.moonlightcafe.MenuGenerator;
 import com.cornellcollege.android.moonlightcafe.logindata.LoginDbSchema.LoginTable;
 
 /**
- * Created by Tibuchuba on 9/23/2015.
+ * Class Used to input and query user information into the database
  */
 public class LoginData {
     private Context mContext;
@@ -44,7 +44,7 @@ public class LoginData {
         return new LoginCursorWrapper(cursor);
     }
 
-
+// returns login information
     public static LoginData get(Context context) {
         if (sLoginData == null) {
             sLoginData = new LoginData(context);

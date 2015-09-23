@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Activity used to host MenuListFragment
+ */
 public class MenuActivity extends FragmentActivity
                         implements MenuListFragment.Callbacks{
 

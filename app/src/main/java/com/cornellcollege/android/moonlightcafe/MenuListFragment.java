@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Tibuchuba on 9/21/2015.
+ * Fragment used to display a list of menu items which are selectable
  */
 public class MenuListFragment extends Fragment {
 

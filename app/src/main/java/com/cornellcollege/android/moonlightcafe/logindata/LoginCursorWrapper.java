@@ -5,7 +5,7 @@ import android.database.CursorWrapper;
 
 
 /**
- * Created by Tibuchuba on 9/23/2015.
+ * Wrapper class used to input and traverse data from the login database
  */
 public class LoginCursorWrapper extends CursorWrapper {
 

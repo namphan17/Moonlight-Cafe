@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/22/2015.
+ * Activity hosts the Order summary fragment
  */
 
 public class SummaryActivity extends FragmentActivity {

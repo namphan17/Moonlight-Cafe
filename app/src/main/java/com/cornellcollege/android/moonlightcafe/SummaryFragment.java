@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/21/2015.
+ * Fragment displaying a summary of the order and option to finalize order
  */
 public class SummaryFragment extends Fragment {
 
