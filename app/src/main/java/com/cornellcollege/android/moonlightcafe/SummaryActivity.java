@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/22/2015.
+ *This activity is for the order summary
+ * @author Akash Surti, Hwi Ram Jeong, Nam Phan, Dawit Tsigie
+ * @version 9/22/2015
  */
-
-public class SummaryActivity extends FragmentActivity {
+public class SummaryActivity extends FragmentActivity
+                            implements SummaryFragment.Callbacks {
 
     public static final String SUMMARY_EXTRA_ITEM_ID =
             "Summary_Activity_Item_ID";
@@ -22,6 +24,11 @@ public class SummaryActivity extends FragmentActivity {
         intent.putExtra(SUMMARY_EXTRA_ITEM_ID, itemId);
         intent.putExtra(ITEM_QUANTITY, mQuantity);
         return intent;
+    }
+    @Override
+    public void order(Context context) {
+        Intent intent = MenuActivity.newIntent(this, true);
+        startActivity(intent);
     }
 
     @Override

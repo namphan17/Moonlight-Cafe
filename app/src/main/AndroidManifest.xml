@@ -48,7 +48,8 @@
 
         </activity>
 
-        <activity android:name=".LoginActivities.ForgotPassword">
+        <activity android:name=".LoginActivities.ForgotPassword"
+                  android:screenOrientation="portrait">
 
         </activity>
 
