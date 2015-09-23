@@ -62,7 +62,7 @@ public class Register extends Activity{
     private boolean lastError = false;
     private boolean emptyError = false;
     private boolean invalidError = false;
-    private boolean alreadyError = true;
+    private boolean alreadyError = false;
     private boolean differentError = false;
     private boolean securityError = false;
 
@@ -220,6 +220,17 @@ public class Register extends Activity{
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                log = LoginData.get(Register.this);
+                LoginUser user = log.getLogin(username);
+                String temp = user.getUsername();
+
+                if(temp.equals(username)){
+                    alreadyError = false;
+                    emailAlreadyUsedError.setVisibility(View.VISIBLE);
+                } else {
+                    alreadyError = true;
+                    emailAlreadyUsedError.setVisibility(View.GONE);
+                }
                 temp_pass = password.getText().toString();
             }
 

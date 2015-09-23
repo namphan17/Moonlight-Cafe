@@ -61,14 +61,6 @@ public class ForgotPassword extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 username = userId.getText().toString();
-
-                LoginData log = LoginData.get(ForgotPassword.this);
-                LoginUser user = log.getLogin(username);
-                fetchQuestion = user.getSecureQuestion();
-
-                securityQuestion = (TextView) findViewById(R.id.security_question);
-                secureQuestion = fetchQuestion;
-                securityQuestion.setText(secureQuestion);
             }
 
             @Override
@@ -85,6 +77,14 @@ public class ForgotPassword extends Activity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 fname = firstName.getText().toString();
+
+                LoginData log = LoginData.get(ForgotPassword.this);
+                LoginUser user = log.getLogin(username);
+                fetchQuestion = user.getSecureQuestion();
+
+                securityQuestion = (TextView) findViewById(R.id.security_question);
+                secureQuestion = fetchQuestion;
+                securityQuestion.setText(secureQuestion);
             }
 
             @Override
@@ -161,8 +161,10 @@ public class ForgotPassword extends Activity {
                 fetchAnswer = user.getSecureAnswer();
                 fetchmail = user.getEmail();
 
-                if (fname.equals(fetchFname) && lname.equals(fetchLname) && secureAnswer.equals(fetchAnswer) && email.equals(fetchmail)) {
+                if (secureAnswer.equals(fetchAnswer) && email.equals(fetchmail) && fname.equals(fetchFname) && lname.equals(fetchLname)) {
                     complete = true;
+                } else {
+                    complete = false;
                 }
 
                 if (complete) {
