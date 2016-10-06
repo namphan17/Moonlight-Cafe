@@ -1,0 +1,182 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:62), pid=1672, tid=7752
+#
+# JRE version:  (8.0_31-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.31-b07 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002c03000):  JavaThread "Unknown thread" [_thread_in_vm, id=7752, stack(0x0000000002ab0000,0x0000000002bb0000)]
+
+Stack: [0x0000000002ab0000,0x0000000002bb0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3169ba]
+V  [jvm.dll+0x2674c3]
+V  [jvm.dll+0x268103]
+V  [jvm.dll+0x25f8f5]
+V  [jvm.dll+0x3aa76f]
+V  [jvm.dll+0x3d6852]
+V  [jvm.dll+0x3d6bda]
+V  [jvm.dll+0x3d2017]
+V  [jvm.dll+0xe54d2]
+V  [jvm.dll+0x1fa089]
+V  [jvm.dll+0x22b694]
+V  [jvm.dll+0x14d8c1]
+C  [java.exe+0x20b6]
+C  [java.exe+0xc9bb]
+C  [java.exe+0xca4f]
+C  [KERNEL32.DLL+0x13d2]
+C  [ntdll.dll+0x154e4]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002c03000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=7752, stack(0x0000000002ab0000,0x0000000002bb0000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x00000000eab00000, 0x00000000ed580000, 0x0000000100000000)
+  eden space 33280K, 2% used [0x00000000eab00000,0x00000000eaba6670,0x00000000ecb80000)
+  from space 5120K, 0% used [0x00000000ed080000,0x00000000ed080000,0x00000000ed580000)
+  to   space 5120K, 0% used [0x00000000ecb80000,0x00000000ecb80000,0x00000000ed080000)
+ ParOldGen       total 87552K, used 0K [0x00000000c0000000, 0x00000000c5580000, 0x00000000eab00000)
+  object space 87552K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c5580000)
+ Metaspace       used 677K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 67K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000120c0000,0x00000000122d0000] byte_map_base: 0x0000000011ac0000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006b23d4f0
+ Begin Bits: [0x0000000012c30000, 0x0000000013c30000)
+ End Bits:   [0x0000000013c30000, 0x0000000014c30000)
+
+Polling page: 0x0000000001350000
+
+CodeCache: size=245760Kb used=327Kb max_used=327Kb free=245432Kb
+ bounds [0x0000000002d00000, 0x0000000002f70000, 0x0000000011d00000]
+ total_blobs=56 nmethods=0 adapters=37
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.152 loading class java/lang/Short
+Event: 0.152 loading class java/lang/Short done
+Event: 0.152 loading class java/lang/Integer
+Event: 0.153 loading class java/lang/Integer done
+Event: 0.153 loading class java/lang/Long
+Event: 0.153 loading class java/lang/Long done
+Event: 0.154 loading class java/lang/NullPointerException
+Event: 0.155 loading class java/lang/NullPointerException done
+Event: 0.155 loading class java/lang/ArithmeticException
+Event: 0.155 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff6bec00000 - 0x00007ff6bec34000 	C:\Program Files\Java\jdk1.8.0_31\bin\java.exe
+0x00007fff6e010000 - 0x00007fff6e1bd000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff6d530000 - 0x00007fff6d66e000 	C:\Windows\system32\KERNEL32.DLL
+0x00007fff6b450000 - 0x00007fff6b565000 	C:\Windows\system32\KERNELBASE.dll
+0x00007fff69ca0000 - 0x00007fff69d2e000 	C:\Windows\system32\apphelp.dll
+0x00007fff59fa0000 - 0x00007fff59ff3000 	C:\Windows\AppPatch\AppPatch64\AcGenral.DLL
+0x00007fff6ba50000 - 0x00007fff6bafa000 	C:\Windows\system32\msvcrt.dll
+0x00007fff6b5c0000 - 0x00007fff6b5ee000 	C:\Windows\system32\SspiCli.dll
+0x00007fff6d670000 - 0x00007fff6d6c4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007fff6dc40000 - 0x00007fff6ddb7000 	C:\Windows\system32\USER32.dll
+0x00007fff6b840000 - 0x00007fff6b9d4000 	C:\Windows\system32\ole32.dll
+0x00007fff6bc40000 - 0x00007fff6d169000 	C:\Windows\system32\SHELL32.dll
+0x00007fff6a570000 - 0x00007fff6a591000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007fff6d8b0000 - 0x00007fff6d95a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007fff5d670000 - 0x00007fff5d68e000 	C:\Windows\SYSTEM32\MPR.dll
+0x00007fff6bb00000 - 0x00007fff6bc40000 	C:\Windows\system32\RPCRT4.dll
+0x00007fff6dbe0000 - 0x00007fff6dc39000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007fff6d960000 - 0x00007fff6db71000 	C:\Windows\SYSTEM32\combase.dll
+0x00007fff6b6f0000 - 0x00007fff6b83f000 	C:\Windows\system32\GDI32.dll
+0x00007fff6b140000 - 0x00007fff6b155000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007fff69bb0000 - 0x00007fff69c62000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007fff6b6b0000 - 0x00007fff6b6e6000 	C:\Windows\system32\IMM32.DLL
+0x00007fff6dea0000 - 0x00007fff6dff2000 	C:\Windows\system32\MSCTF.dll
+0x00007fff6b0f0000 - 0x00007fff6b121000 	C:\Windows\system32\nvinitx.dll
+0x00007fff6b0e0000 - 0x00007fff6b0ea000 	C:\Windows\SYSTEM32\VERSION.dll
+0x000000006ee90000 - 0x000000006ee96000 	C:\Program Files\NVIDIA Corporation\CoProcManager\_etoured.dll
+0x00007fff68660000 - 0x00007fff68692000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvd3d9wrapx.dll
+0x00007fff6d6d0000 - 0x00007fff6d8aa000 	C:\Windows\system32\SETUPAPI.dll
+0x00007fff6b570000 - 0x00007fff6b5bf000 	C:\Windows\system32\CFGMGR32.dll
+0x00007fff68630000 - 0x00007fff68652000 	C:\Program Files\NVIDIA Corporation\CoProcManager\nvdxgiwrapx.dll
+0x00007fff691e0000 - 0x00007fff6945b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.18006_none_623f33d3ecbe86e8\COMCTL32.dll
+0x000000006b2c0000 - 0x000000006b392000 	C:\Program Files\Java\jdk1.8.0_31\jre\bin\msvcr100.dll
+0x000000006aa60000 - 0x000000006b2ba000 	C:\Program Files\Java\jdk1.8.0_31\jre\bin\server\jvm.dll
+0x00007fff63160000 - 0x00007fff63169000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff68b80000 - 0x00007fff68ba2000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff6e000000 - 0x00007fff6e007000 	C:\Windows\system32\PSAPI.DLL
+0x00007fff6db80000 - 0x00007fff6dbda000 	C:\Windows\system32\WS2_32.dll
+0x00007fff68b50000 - 0x00007fff68b7a000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007fff6b6a0000 - 0x00007fff6b6a9000 	C:\Windows\system32\NSI.dll
+0x00007fff69f20000 - 0x00007fff69f48000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x000000006aa50000 - 0x000000006aa5f000 	C:\Program Files\Java\jdk1.8.0_31\jre\bin\verify.dll
+0x000000006aa20000 - 0x000000006aa48000 	C:\Program Files\Java\jdk1.8.0_31\jre\bin\java.dll
+0x000000006aa00000 - 0x000000006aa16000 	C:\Program Files\Java\jdk1.8.0_31\jre\bin\zip.dll
+0x00007fff5eba0000 - 0x00007fff5ed29000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Xmx1024M -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant 
+java_command: com.android.dx.command.Main --dex --num-threads=4 --output C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\dex\debug C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\classes\debug C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-08b16856724fa3fb4e27eb337c3e2a21cf114629.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-422204e3b9b56cee8cb8b157346af56f9470ba4f.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-e9af0954f9da96b54abcf453311851b54aff8eb7.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-a030c542d914523da90c878df1c6e3cf8df6480d.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-de15183f910951e0911355bf24752758f3d5ca76.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-25779f6c31bafdc4cefbcda7b97afca2ae750727.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-0f4ef831f9fbde26ca890211e9f2cd000ad7b40a.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-aba8182fc8e383d0d8840c80a3ac40a443999e4f.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-e4b187ea31dccc97bfa614d7d343f4105d00864f.jar C:\Users\Ngoc Nguyen\Desktop\Android Project\MoonlightCafe\MoonlightCafe\app\build\intermediates\pre-dexed\debug\classes-e23aa69e1380762b1e98ed4f1203fa668566d4ce.jar C:\Users\Ngoc N
+java_class_path (initial): D:\Android\sdk\build-tools\23.0.0\lib\dx.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_71\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\GtkSharp\2.12\bin;D:\nodejs\;C:\Users\Ngoc Nguyen\AppData\Roaming\npm
+USERNAME=Ngoc Nguyen account
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 8271356k(1149864k free), swap 11417084k(71080k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.31-b07) for windows-amd64 JRE (1.8.0_31-b13), built on Dec 17 2014 21:00:28 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Oct 02 20:32:01 2016
+elapsed time: 2 seconds (0d 0h 0m 2s)
+

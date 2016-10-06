@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/moon"
+        android:layout_marginLeft="50dp"
+       />
+
+    <TextView
+        android:id="@+id/pizza_item_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+               android:gravity="center"
+        android:padding="10dp"
+        android:text="Pizza"
+        android:textAllCaps="true"
+        android:textSize="30sp"
+        />
+</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Quantity"
+        android:textSize="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp">
+
+        <Button
+            android:id="@+id/pizza_subtract_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/pizza_quantity_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="20"
+            android:textSize="25sp"/>
+
+        <Button
+            android:id="@+id/pizza_add_button_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:text="Options"
+        android:textSize="25dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout">
+
+        <CheckBox
+            android:id="@+id/pizza_pepperoni"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Pepperoni"/>
+
+        <CheckBox
+            android:id="@+id/pizza_black_olives"
+
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/pizza_pepperoni"
+            android:text="Black Olives"
+            />
+
+        <CheckBox
+            android:id="@+id/pizza_bacon"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Bacon"
+            android:layout_alignBottom="@+id/pizza_chicken"
+            android:layout_alignLeft="@+id/pizza_pepperoni"
+            android:layout_alignStart="@+id/pizza_pepperoni"/>
+
+        <CheckBox
+            android:id="@+id/pizza_onion"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pizza_bacon"
+            android:layout_margin="10dp"
+            android:text="Onion"/>
+
+        <CheckBox
+
+            android:id="@+id/pizza_sausage"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Sausage"
+            android:layout_alignTop="@+id/pizza_extracheese"
+            android:layout_toRightOf="@+id/pizza_extracheese"
+            android:layout_toEndOf="@+id/pizza_extracheese"/>
+
+        <CheckBox
+
+            android:id="@+id/pizza_chicken"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Chicken"
+            android:layout_below="@+id/pizza_extracheese"
+            android:layout_toRightOf="@+id/pizza_pineapple"
+            android:layout_toEndOf="@+id/pizza_pineapple"/>
+
+        <CheckBox
+            android:id="@+id/pizza_mushroom"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pizza_sausage"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/pizza_onion"
+            android:text="Mushroom"/>
+
+        <CheckBox
+            android:id="@+id/pizza_pineapple"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pizza_sausage"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/pizza_mushroom"
+            android:text="Pineapple"/>
+
+        <CheckBox
+            android:id="@+id/pizza_extracheese"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/pizza_black_olives"
+            android:text="Extra Cheese"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pizza"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="127dp"
+            android:layout_marginEnd="127dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            android:id="@+id/pizza_order_button"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
