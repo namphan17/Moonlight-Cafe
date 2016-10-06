@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import java.util.UUID;
 
 /**
- *
+ *Activity used to host food customization fragment
  */
 public class CustomizeActivity extends FragmentActivity {
 

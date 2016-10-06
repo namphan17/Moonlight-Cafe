@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/21/2015.
+ * Used to query, store and update the menu items database
  */
 public class ItemLab {
 

@@ -16,6 +16,9 @@ import com.cornellcollege.android.moonlightcafe.R;
 import com.cornellcollege.android.moonlightcafe.logindata.LoginData;
 import com.cornellcollege.android.moonlightcafe.logindata.LoginUser;
 
+/**
+ * Activity used  to login to the page
+ */
 public class Login extends AppCompatActivity {
 
     private Button login;
@@ -96,7 +99,6 @@ public class Login extends AppCompatActivity {
                 LoginData log = LoginData.get(Login.this);
                 LoginUser user = log.getLogin(username);
                 fetchPassword = user.getPassword();
-
                 if(password.equals(fetchPassword)){
                     startActivity(i);
                 } else {

@@ -19,7 +19,7 @@ import com.cornellcollege.android.moonlightcafe.logindata.LoginUser;
 import org.w3c.dom.Text;
 
 /**
- * Created by akashsurti on 9/21/15.
+ * Forgot password activity used to reset password
  */
 public class ForgotPassword extends Activity {
 

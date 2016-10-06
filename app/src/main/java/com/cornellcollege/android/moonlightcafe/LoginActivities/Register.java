@@ -13,14 +13,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-/**
- * Created by akashsurti on 9/21/15.
- */
-
 import com.cornellcollege.android.moonlightcafe.R;
 import com.cornellcollege.android.moonlightcafe.logindata.LoginData;
 import com.cornellcollege.android.moonlightcafe.logindata.LoginUser;
+
+/**
+ * Account Registration activity
+ */
+
+
 
 public class Register extends Activity{
 

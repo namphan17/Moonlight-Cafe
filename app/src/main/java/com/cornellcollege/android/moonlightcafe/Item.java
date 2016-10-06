@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Created by Tibuchuba on 9/21/2015.
+ * Model used to store food items and customizations
  */
 public class Item {
 
